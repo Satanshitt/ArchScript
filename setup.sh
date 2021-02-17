@@ -43,7 +43,7 @@ if ls "$DISK"; then
     clear
     sleep 1
     echo -e "Finishing configuring the partitions.."
-    #sh install.sh
+    sh install.sh
 else
     clear
     echo "Please insert a valid disk in order to partition."
