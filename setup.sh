@@ -1,12 +1,16 @@
 #!/bin/bash
 
-red='\033[38;2;255;0;02m'
-echo -e $red "======================================================================================================================================"
-echo -e $red "                                              ArchScript | Personal installer Arch Linux                                              "
-echo -e $red "======================================================================================================================================"
+echo ""
+echo -e "======================================================================================================================================"
+echo -e "                                              ArchScript | Personal installer Arch Linux                                              "
+echo -e "======================================================================================================================================"
+echo ""
 
-sleep 3
+echo "Press ENTER to continue.."
+read line
+sleep 1
 clear
+
 echo -e "> Setting the corresponding time zone."
 #timedatectl set-ntp true
 #mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
@@ -25,7 +29,7 @@ echo -e "Please enter disk to install Arch Linux on: (example /dev/sda)"
 read DISK
 
 if ls "$DISK"; then
-    for i in $(seq 1 100); do
+    for i in $(seq 1 5); do
         sleep 0.1
         echo $i
         #sgdisk -Z ${DISK}

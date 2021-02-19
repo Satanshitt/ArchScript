@@ -1,14 +1,13 @@
 #!/bin/bash
 
 clear
-echo -e "User and password control settings."
-sleep 3
+echo -e "> User and password control settings."
 #arch-root /mnt
+sleep 3
 clear
 
 inputs=false
 while ! $inputs; do
-    clear
     username=$(dialog --backtitle "Username" --nocancel \
         --inputbox "Username \
         \nPlease insert a user:" \
@@ -32,15 +31,24 @@ while ! $inputs; do
             --msgbox "To prevent possible errors, use two different passwords." 5 55
     else
         clear
-        echo "Loading.."
-        sleep 3
-        #useradd -m -g users -G audio,lp,optical,storage,video,wheel,games,power,scanner -s /bin/bash $Username
-        #passwd $username $Password
+
+        echo ""
+        echo "Username: $username"
+        echo "Password: $password" 
+        echo "Password (ROOT): $passroot"
+        echo ""
+        echo "Press ENTER to confirm"
+        read line
+
+        clear
+        echo "Configuration username and password.."
         #passwd $passroot
+        #useradd -m -g users -G audio,lp,optical,storage,video,wheel,games,power,scanner -s /bin/bash $username
+        #passwd $username $password
         sleep 2
         clear
 
-        echo -e "Configuration swap file"
+        echo -e "> Configuration swap file"
         #dd if=/dev/zero of=/swapfile bs=1M count=2048
         #chmod 600 /swapfile
         #mkswap /swapfile
@@ -49,7 +57,7 @@ while ! $inputs; do
         sleep 2
         clear
 
-        echo -e "Network setup"
+        echo -e "> Network setup"
         #ln -sf /usr/share/zoneinfo/Armerica/Argentina/Cordoba /etc/localtime
         #hwclock --systohc
         #echo LANG=es_US.UTF-8 > /etc/locale.conf
@@ -60,28 +68,33 @@ while ! $inputs; do
         #systemctl enable NetworkManager
         sleep 2
         clear
-        
-        echo -e "Bootloader grub installation"
+
+        echo -e "> Bootloader grub installation"
         #pacman -S grub efibootmgr
         #grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB
         #grun-mkconfig -o /boot/grub/grub.cfg
         sleep 2
         clear
 
-        echo -e "Install others programs"
+        echo -e "> Install others programs"
         #pacman -S telegram-desktop xorg sudo gdm xf86-video-intel 
         sleep 2
         clear
 
-        echo -e "Configuration sudo"
+        echo -e "> Configuration sudo"
         #nano /etc/sudoers
         sleep 2
         clear
 
-        echo -e "Install desktop"
+        echo -e "> Install desktop"
         #pacman -S xfce4 xfce4-goodies lightdm lightdm-gtk-greeter
         #ystemctl enable lightdm
-        echo "si"
+        
+        sleep 2
+        clear 
+        echo "End of script, press ENTER to restart the computer."
+        read line
+        #reboot
         
         inputs=true
     fi
