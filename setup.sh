@@ -1,5 +1,12 @@
 #!/bin/bash
 
+red='\033[38;2;255;0;02m'
+echo -e $red "======================================================================================================================================"
+echo -e $red "                                              ArchScript | Personal installer Arch Linux                                              "
+echo -e $red "======================================================================================================================================"
+
+sleep 3
+clear
 echo -e "> Setting the corresponding time zone."
 #timedatectl set-ntp true
 #mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak

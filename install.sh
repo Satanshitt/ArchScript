@@ -52,10 +52,10 @@ while ! $inputs; do
         echo -e "Configuration timezone and locale"
         #ln -sf /usr/share/zoneinfo/Armerica/Argentina/Cordoba /etc/localtime
         #hwclock --systohc
-        #echo "LANG=es_US.UTF-8" > /etc/locale.conf
-        #echo "linux" > /etc/hostname
-        #echo "127.0.0.1 localhost\::1 localhost\127.0.0.1 linux.localdomain linux" > /etc/hosts
-        #echo "KEYMAP=la-latin1" > /etc/vconsole.conf
+        #echo LANG=es_US.UTF-8 > /etc/locale.conf
+        #echo linux > /etc/hostname
+        #echo "127.0.0.1   localhost\::1   localhost\127.0.0.1   linux.localdomain linux" > /etc/hosts
+        #echo KEYMAP=la-latin1 > /etc/vconsole.conf
         sleep 2
         clear
 
