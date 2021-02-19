@@ -49,23 +49,19 @@ while ! $inputs; do
         sleep 2
         clear
 
-        echo -e "Configuration timezone and locale"
+        echo -e "Network setup"
         #ln -sf /usr/share/zoneinfo/Armerica/Argentina/Cordoba /etc/localtime
         #hwclock --systohc
         #echo LANG=es_US.UTF-8 > /etc/locale.conf
         #echo linux > /etc/hostname
         #echo "127.0.0.1   localhost\::1   localhost\127.0.0.1   linux.localdomain linux" > /etc/hosts
         #echo KEYMAP=la-latin1 > /etc/vconsole.conf
-        sleep 2
-        clear
-
-        echo -e "Configuration networkmanager"
         #systemctl start NetworkManager
         #systemctl enable NetworkManager
         sleep 2
-        clear 
-
-        echo -e "Install and configuration grub"
+        clear
+        
+        echo -e "Bootloader grub installation"
         #pacman -S grub efibootmgr
         #grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB
         #grun-mkconfig -o /boot/grub/grub.cfg
