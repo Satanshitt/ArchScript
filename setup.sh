@@ -5,6 +5,7 @@ echo -e "> Setting the corresponding time zone."
 #mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 #curl -s "https://www.archlinux.org/mirrorlist/?country=US&protocol=http&protocol=https&ip_version=4&ip_version=6&use_mirror_status=on" | sed -e "s/^#Server/Server/g" > /etc/pacman.d/mirrorlist
 #pacman -Syy
+sleep 2
 clear
 
 echo -e "> Partitioning."
@@ -17,7 +18,7 @@ echo -e "Please enter disk to install Arch Linux on: (example /dev/sda)"
 read DISK
 
 if ls "$DISK"; then
-    for i in $(seq 1 2); do
+    for i in $(seq 1 100); do
         sleep 0.1
         echo $i
         #sgdisk -Z ${DISK}

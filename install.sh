@@ -34,9 +34,59 @@ while ! $inputs; do
         clear
         echo "Loading.."
         sleep 3
-        echo "$username"
-        echo "$password"
-        echo "$passroot"
+        #useradd -m -g users -G audio,lp,optical,storage,video,wheel,games,power,scanner -s /bin/bash $Username
+        #passwd $username $Password
+        #passwd $passroot
+        sleep 2
+        clear
+
+        echo -e "Configuration swap file"
+        #dd if=/dev/zero of=/swapfile bs=1M count=2048
+        #chmod 600 /swapfile
+        #mkswap /swapfile
+        #swapon /swapfile
+        #echo "/swapfile none swap defaults 0 0" > /etc/fstab
+        sleep 2
+        clear
+
+        echo -e "Configuration timezone and locale"
+        #ln -sf /usr/share/zoneinfo/Armerica/Argentina/Cordoba /etc/localtime
+        #hwclock --systohc
+        #echo "LANG=es_US.UTF-8" > /etc/locale.conf
+        #echo "linux" > /etc/hostname
+        #echo "127.0.0.1 localhost\::1 localhost\127.0.0.1 linux.localdomain linux" > /etc/hosts
+        #echo "KEYMAP=la-latin1" > /etc/vconsole.conf
+        sleep 2
+        clear
+
+        echo -e "Configuration networkmanager"
+        #systemctl start NetworkManager
+        #systemctl enable NetworkManager
+        sleep 2
+        clear 
+
+        echo -e "Install and configuration grub"
+        #pacman -S grub efibootmgr
+        #grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB
+        #grun-mkconfig -o /boot/grub/grub.cfg
+        sleep 2
+        clear
+
+        echo -e "Install others programs"
+        #pacman -S telegram-desktop xorg sudo gdm xf86-video-intel 
+        sleep 2
+        clear
+
+        echo -e "Configuration sudo"
+        #nano /etc/sudoers
+        sleep 2
+        clear
+
+        echo -e "Install desktop"
+        #pacman -S xfce4 xfce4-goodies lightdm lightdm-gtk-greeter
+        #ystemctl enable lightdm
+        echo "si"
+        
         inputs=true
     fi
 
